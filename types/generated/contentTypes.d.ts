@@ -818,6 +818,36 @@ export interface ApiAboutAbout extends Schema.SingleType {
   };
 }
 
+export interface ApiBroucherBroucher extends Schema.CollectionType {
+  collectionName: 'brouchers';
+  info: {
+    singularName: 'broucher';
+    pluralName: 'brouchers';
+    displayName: 'Broucher';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Broucher: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::broucher.broucher',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::broucher.broucher',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Schema.CollectionType {
   collectionName: 'products';
   info: {
@@ -905,6 +935,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
+      'api::broucher.broucher': ApiBroucherBroucher;
       'api::product.product': ApiProductProduct;
       'api::service.service': ApiServiceService;
     }

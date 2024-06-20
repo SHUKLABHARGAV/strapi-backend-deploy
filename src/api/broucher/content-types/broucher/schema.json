@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brouchers",
+  "info": {
+    "singularName": "broucher",
+    "pluralName": "brouchers",
+    "displayName": "Broucher"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Broucher": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
